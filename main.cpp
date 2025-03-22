@@ -64,6 +64,32 @@ int has_exit (char mapa[rozmiar][rozmiar], int rozmiar)
     return 0;
 }
 
+void fill_map_with_preplanned(char mapa[rozmiar][rozmiar])
+{
+/*
+    X X XXXXXX
+     X  X  XXX
+    X X X XX
+      XXX  X X
+         X XXX
+    XXX   X XX
+    XXX     X
+    XXXXXX  X
+          XXXX
+    XXX      X
+*/
+    string preplanned = "X X XXXXXX X  X  XXXX X X XX    XXX  X X     X XXXXXX   X XXXXX     X XXXXXX  X       XXXXXXX      X";
+    int preplanned_size = 10;
+
+    for (int i = 0; i < preplanned_size; i++)
+    {
+        for (int j = 0; j < preplanned_size; j++)
+        {
+            mapa[i][j] = preplanned[i * preplanned_size + j];
+        }
+    }
+}
+
 int main()
 {
     srand(time(NULL));
